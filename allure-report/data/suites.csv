@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1691","Registro de usuario inválido","Registro","Thu May 15 16:04:33 CST 2025","passed","Thu May 15 16:04:35 CST 2025","","","",""
+"","2628","Inicio de sesión válido","Autenticación","Thu May 15 16:04:27 CST 2025","passed","Thu May 15 16:04:29 CST 2025","","","",""
+"","847","Registro de usuario válido","Registro","Thu May 15 16:04:32 CST 2025","passed","Thu May 15 16:04:33 CST 2025","","","",""

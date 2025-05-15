@@ -1,5 +1,5 @@
 import { SignUpElements } from "./signup.elements";
-
+import { CommonPageMethods } from "../../common-page/common-page.methods";
 export class SignupMethods{
     static insertUsername(username){
         SignUpElements.textboxes.username.invoke("val",username);
@@ -17,5 +17,13 @@ export class SignupMethods{
         this.insertUsername(username);
         this.insertPassword(password);
         this.clickOnSignupButton();
+    }
+
+    static verifySignupSuccessfulMessageIsDisplayed() {
+    CommonPageMethods.verifyAlert("Sign up successful.");
+    }
+
+    static verifyThatThisUserAlreadyExistsMessageIsDisplayed() {
+    CommonPageMethods.verifyAlert("This user already exist.");
     }
 }
