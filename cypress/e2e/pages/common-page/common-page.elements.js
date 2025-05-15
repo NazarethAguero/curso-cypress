@@ -7,24 +7,29 @@ export class CommonPageElements{
             },
 
             get contact(){
-                return cy.get("a","Contact")
+                return cy.contains("a","Contact")
             },
 
              get aboutUs(){
-                return cy.get("a","About Us")
+                return cy.contains("a","About Us")
             },
 
              get cart(){
-                return cy.get("a","Cart")
+                return cy.contains("a","Cart")
             },
 
              get login(){
-                return cy.get("a","Log in")
+                return cy.contains("a","Log in")
             },
 
              get signup(){
-                return cy.get("a","Sign up")
+                return cy.contains("a","Sign up")
             }
         };
     }
+
+    static get signedUser(){
+        return cy.get("a#nameofuser");
+    }
+
 }
