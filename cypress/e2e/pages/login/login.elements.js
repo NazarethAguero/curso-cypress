@@ -12,8 +12,8 @@ export class LoginElements{
 
     static get buttons(){
         return{
-            get close(){
-                return cy.get('div[id="logInModal"] button').eq(1)
+            get close() {
+                return cy.get('#logInModal button[data-dismiss="modal"]');
             },
             get login(){
                 return cy.contains("button","Log in")
