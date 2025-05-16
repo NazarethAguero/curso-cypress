@@ -1,5 +1,4 @@
 
-import { use } from "chai";
 import { Logger } from "../../../util/logger";
 import { CommonPageMethods } from "../../common-page/common-page.methods";
 import { LoginMethods } from "../login.methods";
@@ -24,9 +23,10 @@ export class CartMethods{
     }
 
    static deleteProducts() {
-     cy.get('a[onclick*="deleteItem"]').each(($link) => {
+        cy.intercept('POST', 'https://api.demoblaze.com/deleteitem').as('deleteItem')
+        cy.get('a[onclick*="deleteItem"]').each(($link) => {
         cy.wrap($link).click(); // 
-        cy.wait(1000); 
+        cy.wait('@deleteItem'); 
       });
     }
 
