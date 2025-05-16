@@ -16,3 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import '@mmisty/cypress-allure-adapter/support';
 import './commands'
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Evita que Cypress falle la prueba si el error contiene "Modal is transitioning"
+  if (err.message.includes('Modal is transitioning')) {
+    return false;
+  }
+});

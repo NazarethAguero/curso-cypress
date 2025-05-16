@@ -5,8 +5,8 @@ module.exports = defineConfig({
   retries:1,
   e2e: {
     setupNodeEvents(on, config) {
-      configureAllureAdapterPlugins(on, config);
-      return config;
+        configureAllureAdapterPlugins(on, config);
+        return config;
     },
   },
 });
