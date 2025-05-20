@@ -14,5 +14,8 @@ phases:
       - npm run cy:parallel || echo "Falló el comando cy:parallel"
   post_build:
     commands:
+      - ls -la
+      - ls -la allure-report || echo "Directorio 'allure-report' no existe"
+      - if [ -d "allure-report" ]; then aws s3 sync allure-report s3://test-report-cypress-nazareth/; else echo "No se encontró el directorio allure-report"; fi
       - aws s3 sync allure-report s3://test-report-cypress-nazareth/
       - aws s3 cp --recursive --acl public-read s3://test-report-cypress-nazareth/ s3://test-report-cypress-nazareth/ --metadata-directive REPLACE
